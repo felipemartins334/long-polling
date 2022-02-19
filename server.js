@@ -1,4 +1,8 @@
-import http  from 'http'
+import http from 'http'
+import { connection } from './db.js'
+import { runMigrations } from './runMigrations.js'
+
+runMigrations('migrations')
 
 const PORT = 3333
 const DELAY = 100
@@ -31,3 +35,4 @@ function startTickle(res){
   }, DELAY)
 
 }
+
